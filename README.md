@@ -46,3 +46,14 @@ The keylogger successfully harvested several high-value account credentials asso
 > **Note on Email Infrastructure:** The Pizza Jukebox email configuration was captured in the logs, revealing the POP3 server (`pop.pizzajukebox.com` on port 995) and the SMTP server (`smtp.pizzajukebox.com` on port 587).
 
 [Image: Screenshot of the extracted PCAP TCP stream showing the plaintext Bank of America credentials being exfiltrated]
+
+## 6. Root Cause Analysis (RCA) & Remediation Strategy
+**Root Cause:**
+The initial compromise occurred due to a failure in endpoint execution controls and user security awareness. The victim (an accountant) was able to successfully download and execute an untrusted payload (`tkraw Protected99.exe`) from an external domain (`proforma-invoices.com`) without being intercepted by endpoint antivirus or network web filters. 
+
+**Recommended Remediation & Mitigation:**
+To prevent recurring incidents and secure the network perimeter, the following tactical steps must be implemented:
+* **Firewall Blacklisting:** Immediately block outbound traffic to the threat actor's SMTP server (`23.229.162.69`) and distribution IP (`217.182.138.150`).
+* **Endpoint Detection & Response (EDR):** Deploy EDR solutions across all endpoints to automatically quarantine untrusted executables.
+* **Principle of Least Privilege (PoLP):** Revoke local administrator rights from standard user accounts (like accounting) to prevent unauthorized software installation.
+* **Security Awareness Training:** Mandate phishing and social engineering training for all finance and accounting personnel.
