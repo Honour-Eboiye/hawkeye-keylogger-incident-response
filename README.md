@@ -22,7 +22,7 @@ The infection occurred after the user (an accountant) downloaded a malicious exe
 * **Distribution IP Address:** 217.182.138.150
 * **Hosting Web Server:** LiteSpeed
 
-[Image: Screenshot of VirusTotal analysis showing the MD5 hash detection and threat classification]
+![Image: Screenshot of VirusTotal analysis showing the MD5 hash detection and threat classification](https://github.com/Honour-Eboiye/hawkeye-keylogger-incident-response/blob/81ee2ee5c3274512795225be50c40a8a58d200e0/images/Screenshot%20of%20VirusTotal%20analysis%20showing%20the%20MD5%20hash%20detection%20and%20threat%20classification.png)
 
 ## 4. Exfiltration Mechanism
 Once established, the malware initiated a persistent data exfiltration routine, sending the stolen keylog and credential data out of the network via email.
@@ -32,7 +32,7 @@ Once established, the malware initiated a persistent data exfiltration routine, 
 * **Threat Actor Email:** `sales.del@macwinlogistics.in`
 * **Authentication Method:** The malware authenticated to the SMTP server using the Base64 encoded string `U2FsZXNAMjM=`, which decodes to the plaintext password `Sales@23`.
 
-[Image: Screenshot of CyberChef decoding the Base64 SMTP authentication string]
+![Image: Screenshot of CyberChef decoding the Base64 SMTP authentication string](https://github.com/Honour-Eboiye/hawkeye-keylogger-incident-response/blob/81ee2ee5c3274512795225be50c40a8a58d200e0/images/Screenshot%20of%20CyberChef%20decoding%20the%20Base64%20SMTP%20authentication%20string.png)
 
 ## 5. Impact Assessment & Compromised Credentials
 The keylogger successfully harvested several high-value account credentials associated with the user `roman.mcguire`. Immediate password resets and account security protocols must be initiated for the following compromised services:
@@ -45,7 +45,7 @@ The keylogger successfully harvested several high-value account credentials asso
 
 > **Note on Email Infrastructure:** The Pizza Jukebox email configuration was captured in the logs, revealing the POP3 server (`pop.pizzajukebox.com` on port 995) and the SMTP server (`smtp.pizzajukebox.com` on port 587).
 
-[Image: Screenshot of the extracted PCAP TCP stream showing the plaintext Bank of America credentials being exfiltrated]
+![Image: Screenshot of the extracted PCAP TCP stream showing the plaintext Bank of America credentials being exfiltrated](https://github.com/Honour-Eboiye/hawkeye-keylogger-incident-response/blob/81ee2ee5c3274512795225be50c40a8a58d200e0/images/Screenshot%20of%20the%20extracted%20PCAP%20TCP%20stream%20showing%20the%20plaintext%20Bank%20of%20America%20credentials%20being%20exfiltrated.png)
 
 ## 6. Root Cause Analysis (RCA) & Remediation Strategy
 **Root Cause:**
