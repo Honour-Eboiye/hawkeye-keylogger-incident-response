@@ -11,7 +11,7 @@ The infected endpoint was identified as the most active computer at both the net
 * **Operating System:** Windows
 * **User Profile:** BEIJING-5CD1-PC\roman.mcguire
 
-[Image: Screenshot of Wireshark endpoint statistics highlighting the victim IP and MAC address]
+![Image: Screenshot of Wireshark endpoint statistics highlighting the victim IP and MAC address](https://github.com/Honour-Eboiye/hawkeye-keylogger-incident-response/blob/00f2ebe69dc3d213e4af1438d06b5e68799bf411/images/Screenshot%20of%20Wireshark%20endpoint%20statistics%20highlighting%20the%20victim%20IP%20and%20MAC%20address.png)
 
 ## 3. Malware Delivery & Indicators of Compromise (IoCs)
 The infection occurred after the user (an accountant) downloaded a malicious executable file hosted on a remote web server.
